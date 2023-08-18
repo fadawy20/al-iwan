@@ -7,22 +7,25 @@ import { throwError } from 'rxjs';
 @Component({
   selector: 'app-home',
   standalone: true,
-  imports: [CommonModule , CarouselModule , HttpClientModule],
+  imports: [CommonModule, CarouselModule, HttpClientModule],
   templateUrl: './home.component.html',
-  styleUrls: ['./home.component.scss']
+  styleUrls: ['./home.component.scss'],
 })
 export class HomeComponent implements OnInit {
-
   apiData: any;
   limit: number = 10; // <==== Edit this number to limit API results
   customOptions: OwlOptions = {
     loop: true,
-    autoplay: true,
+    autoplay: false,
     center: true,
     dots: true,
     autoHeight: true,
     autoWidth: true,
     nav: true,
+    navText: [
+      "<i class='fa-solid fa-chevron-up'></i>",
+      "<i class='fa-solid fa-chevron-down'></i>",
+    ],
     responsive: {
       0: {
         items: 1,
@@ -31,6 +34,9 @@ export class HomeComponent implements OnInit {
         items: 1,
       },
       1000: {
+        items: 1,
+      },
+      1200: {
         items: 1,
       },
     },

@@ -2,7 +2,16 @@
   <owl-carousel-o [options]="customOptions">
     <ng-container *ngFor="let slide of apiData">
       <ng-template class="slide" carouselSlide [id]="slide.id">
-        <img [src]="slide.url" [alt]="slide.id" [title]="slide.id" />
+        <img
+          [src]="
+            'https://images.pexels.com/photos/1402787/pexels-photo-1402787.jpeg?auto=compress&cs=tinysrgb&w=600'
+          "
+          [alt]="slide.id"
+          [title]="slide.id"
+        />
+        <div class="content">
+          <h5>Hello mr fady</h5>
+        </div>
       </ng-template>
     </ng-container>
   </owl-carousel-o>

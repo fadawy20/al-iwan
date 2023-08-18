@@ -1,66 +1,58 @@
 .wrapper {
   position: relative;
   height: 100vh;
+  overflow: hidden;
 }
-
+::ng-deep .owl-nav {
+  position: fixed;
+  left: 0;
+  bottom: 0;
+}
+::ng-deep .owl-dots {
+  position: fixed;
+  top: 50%;
+  right: 0;
+  transform: translateY(-50%);
+  display: flex;
+  flex-direction: column;
+}
+::ng-deep .owl-dot span {
+  border: 2px solid #fff;
+  background: transparent !important;
+}
+::ng-deep .owl-dots .active span {
+  border: none;
+  background: #fff !important;
+  padding: 2px;
+}
 owl-carousel-o {
   position: absolute;
   height: 100vh;
   width: 100%;
   top: 0;
   left: 0;
+  right: 0;
+  z-index: 1;
 }
 
-.owl-item {
+::ng-deep .owl-item {
   height: 100vh;
-  width: 100%;
-  background-repeat: no-repeat;
-  background-size: cover;
-  background-position: 50% 50%;
 }
 
+::ng-deep .owl-next,
+::ng-deep .owl-prev {
+  background: transparent !important;
+}
 
 img {
-  width: 100%;
+  max-width: 100%;
   height: auto;
-  max-width: 99vh;
 }
-
-/* Feel free to change duration  */
-.animated  {
-  -webkit-animation-duration : 1000 ms  ;
-  animation-duration : 1000 ms  ;
-  -webkit-animation-fill-mode : both  ;
-  animation-fill-mode : both  ;
-}
-/* .owl-animated-out - only for current item */
-/* This is very important class. Use z-index if you want move Out item above In item */
-.owl-animated-out {
-  z-index : 1
-   }
-/* .owl-animated-in - only for upcoming item
-/* This is very important class. Use z-index if you want move In item above Out item */
-.owl-animated-in {
-  z-index : 0
-   }
-/* .fadeOut is style taken from Animation.css and this is how it looks in owl.carousel.css:  */
-.fadeOut  {
-  -webkit-animation-name : fadeOut  ;
-  animation-name : fadeOut  ;
-}
-@-webkit-keyframes  fadeOut  {
-  0% {
-    opacity : 1   ;
-  }
-  100% {
-    opacity : 0   ;
-  }
-}
-@keyframes  fadeOut  {
-  0% {
-    opacity : 1   ;
-  }
-  100% {
-    opacity : 0   ;
-  }
+.content {
+  position: fixed;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  color: #fff;
+  z-index: 9;
 }

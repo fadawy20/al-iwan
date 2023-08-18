@@ -1,0 +1,21 @@
+<div [ngClass]="isImageFirst ? 'bg-dark-80 flex-row-reverse': 'bg-dark-100 flex-row'" class="row align-items-center">
+
+  <div [ngClass]="isImageFirst ? 'justify-content-end' : ''"  class="col-md-6 d-flex pe-0">
+    <div class="item">
+      <img
+        class="img-fluid"
+        [src]="srcImage"
+        alt="placehold"
+      />
+    </div>
+  </div>
+
+  <div  class="col-md-6 d-flex justify-content-center text-white">
+    <div class="item w-75">
+      <h4>{{ labelTitle }}</h4>
+      <p>
+        {{ labelContent }}
+      </p>
+    </div>
+  </div>
+</div>
