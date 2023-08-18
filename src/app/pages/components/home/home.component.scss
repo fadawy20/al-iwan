@@ -1,3 +1,5 @@
+@import "src/assets/styles/_Variables.scss";
+
 .wrapper {
   position: relative;
   height: 100vh;
@@ -33,8 +35,14 @@ owl-carousel-o {
   left: 0;
   right: 0;
   z-index: 1;
+  direction: rtl !important;
 }
-
+::ng-deep .owl-stage-outer {
+  position: relative;
+  overflow: hidden;
+  -webkit-transform: translate3d(0, 0, 0);
+  direction: ltr;
+}
 ::ng-deep .owl-item {
   height: 100vh;
 }
@@ -55,4 +63,43 @@ img {
   transform: translate(-50%, -50%);
   color: #fff;
   z-index: 9;
+  h1 {
+    color: $mainColor;
+    font-size: 6rem;
+    font-weight: 900;
+  }
+  h3 {
+    color: $primaryColor;
+    font-size: 1.5rem;
+    font-weight: 700;
+  }
+  h5 {
+    color: $mainColor;
+    font-size: 1rem;
+    font-weight: 500;
+  }
+  p {
+    color: $primaryColor;
+    font-size: 16px;
+    margin-bottom: 15px;
+  }
+}
+.btn-home {
+  border: 1.8px solid #ffffff;
+  background-color: transparent;
+  color: #fff;
+  padding: 10px 20px;
+  border-radius: 5px;
+  font-size: 18px;
+  font-weight: 600;
+  line-height: 24px;
+  &:hover {
+    transition: all .5s;
+    border-color: $mainColor;
+    color: $mainColor;
+    .arrpw-icon {
+      transform: translateX(-10px);
+      transition: all .5s;
+    }
+  }
 }

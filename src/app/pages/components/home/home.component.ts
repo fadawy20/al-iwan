@@ -1,13 +1,12 @@
 import { Component, OnInit } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { CarouselModule, OwlOptions } from 'ngx-owl-carousel-o';
-import { HttpClient, HttpClientModule } from '@angular/common/http';
-import { throwError } from 'rxjs';
+import { RouterModule } from '@angular/router';
 
 @Component({
   selector: 'app-home',
   standalone: true,
-  imports: [CommonModule, CarouselModule, HttpClientModule],
+  imports: [CommonModule, CarouselModule, RouterModule],
   templateUrl: './home.component.html',
   styleUrls: ['./home.component.scss'],
 })
@@ -42,19 +41,31 @@ export class HomeComponent implements OnInit {
     },
   };
 
-  constructor(private readonly http: HttpClient) {}
+  slides = [
+    {
+      id: 'slide2',
+      headTitle:
+        'رؤيـتنـــــــــــــــــــــــــــــــــــــا ــــــــــــــــــــــــ',
+      title:
+        'التطور من شركة تركز علي الخدمة الداخلية إلي شركة تركز علي السوق الخارجية',
+      description:
+        'ملتزمون بتقديم خدمات هندسية أحترافية عالية الجودة لتعزيز المكان الذي يعيش فيه عملائنا , يجمع نهجنا بين التصميم الاستثنائي والحلول المبتكرة',
+      image: '../../../../assets/images/home/slide2.png',
+    },
+    {
+      id: 'slide3',
+      headTitle: 'أحلامك تتحقق علي أرض الواقع ــــــــــــــــــــــــ',
+      title: 'نقدم خدمات التصميم الهندسي ,الديكوري والاستشارات الهندسية',
+      description:
+        'ليه تكلم اكتر من مهندس عشان تعمل تصاميم كاملة لما ممكن تكلم مكتب واحد فيه كل المهندسين للتصاميم المعمارية والانشائية والكهربية والميكانكية .',
+      image: '../../../../assets/images/home/slide3.png',
+    },
+  ];
+  constructor() {}
 
-  ngOnInit() {
-    this.fetch();
-  }
+  ngOnInit() {}
 
-  fetch() {
-    const api = `https://jsonplaceholder.typicode.com/albums/1/photos?_start=0&_limit=${this.limit}`;
-    const http$ = this.http.get<any>(api);
-
-    http$.subscribe(
-      (res) => (this.apiData = res),
-      (err) => throwError(err)
-    );
+  fun() {
+    alert('fady');
   }
 }
