@@ -1,0 +1,105 @@
+@import "src/assets/styles/_Variables.scss";
+
+.wrapper {
+  position: relative;
+  height: 100vh;
+  overflow: hidden;
+}
+::ng-deep .owl-nav {
+  position: fixed;
+  left: 0;
+  bottom: 0;
+}
+::ng-deep .owl-dots {
+  position: fixed;
+  top: 50%;
+  right: 0;
+  transform: translateY(-50%);
+  display: flex;
+  flex-direction: column;
+}
+::ng-deep .owl-dot span {
+  border: 2px solid #fff;
+  background: transparent !important;
+}
+::ng-deep .owl-dots .active span {
+  border: none;
+  background: #fff !important;
+  padding: 2px;
+}
+owl-carousel-o {
+  position: absolute;
+  height: 100vh;
+  width: 100%;
+  top: 0;
+  left: 0;
+  right: 0;
+  z-index: 1;
+  direction: rtl !important;
+}
+::ng-deep .owl-stage-outer {
+  position: relative;
+  overflow: hidden;
+  -webkit-transform: translate3d(0, 0, 0);
+  direction: ltr;
+}
+::ng-deep .owl-item {
+  height: 100vh;
+}
+
+::ng-deep .owl-next,
+::ng-deep .owl-prev {
+  background: transparent !important;
+}
+
+img {
+  max-width: 100%;
+  height: auto;
+}
+.content {
+  position: fixed;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  color: #fff;
+  z-index: 9;
+  h1 {
+    color: $mainColor;
+    font-size: 6rem;
+    font-weight: 900;
+  }
+  h3 {
+    color: $primaryColor;
+    font-size: 1.5rem;
+    font-weight: 700;
+  }
+  h5 {
+    color: $mainColor;
+    font-size: 1rem;
+    font-weight: 500;
+  }
+  p {
+    color: $primaryColor;
+    font-size: 16px;
+    margin-bottom: 15px;
+  }
+}
+.btn-home {
+  border: 1.8px solid #ffffff;
+  background-color: transparent;
+  color: #fff;
+  padding: 10px 20px;
+  border-radius: 5px;
+  font-size: 18px;
+  font-weight: 600;
+  line-height: 24px;
+  &:hover {
+    transition: all .5s;
+    border-color: $mainColor;
+    color: $mainColor;
+    .arrpw-icon {
+      transform: translateX(-10px);
+      transition: all .5s;
+    }
+  }
+}
