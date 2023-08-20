@@ -66,6 +66,6 @@ export class HomeComponent implements OnInit {
   ngOnInit() {}
 
   fun() {
-    alert('fady');
+    alert('Asmaa');
   }
 }
